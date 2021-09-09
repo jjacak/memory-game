@@ -1,0 +1,207 @@
+body {
+	height: 100vh;
+	font-family: 'VT323', monospace;
+	color: #fff;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+		url(../img/bg-img.jpg);
+	background-position: center;
+	background-size: cover;
+}
+
+.container {
+	max-width: 1300px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+}
+
+header {
+	margin: 20px 0;
+	h1 {
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		font-size: 32px;
+		text-align: center;
+	}
+	p {
+		font-size: 24px;
+		text-align: right;
+		padding-right: 30px;
+	}
+}
+
+.game-area {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 15px;
+
+	.controls-area {
+		width: 100%;
+		.buttons {
+			display: flex;
+			justify-content: space-around;
+
+			button {
+				padding: 10px 20px;
+				border: 1px solid #fff;
+				border-radius: 5px;
+				background: none;
+				font-family: 'VT323', monospace;
+				color: #fff;
+				text-transform: uppercase;
+				font-size: 22px;
+				cursor: pointer;
+				transition: box-shadow 0.4s;
+			}
+			button:hover {
+				box-shadow: 0 0 20px;
+			}
+		}
+		.scores {
+			display: flex;
+			justify-content: space-around;
+			font-size: 18px;
+			padding: 20px 15px;
+		}
+	}
+
+	.cards-area {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(4, 1fr);
+		gap: 10px 10px;
+		grid-template-areas:
+			'. . . .'
+			'. . . .'
+			'. . . .'
+			'. . . .';
+
+		.card {
+			width:50px;
+			height:50px;
+			border-radius: 5px;
+			background-size: cover;
+			background-position: center;
+		}
+		.card[data-image = "brown-dwarf"]{
+			background-image: url(../img/brown-dwarf.jpg);
+		}
+		.card[data-image = "earth"]{
+			background-image: url(../img/earth.jpg);
+		}
+		.card[data-image = "eclipse"]{
+			background-image: url(../img/eclipse.jpg);
+		}
+		.card[data-image = "mars"]{
+			background-image: url(../img/mars.jpg);
+		}
+		.card[data-image = "moon"]{
+			background-image: url(../img/moon.jpg);
+		}
+		.card[data-image = "planet"]{
+			background-image: url(../img/planet.jpg);
+		}
+		.card[data-image = "neptune"]{
+			background-image: url(../img/neptune.jpg);
+		}
+		.card[data-image = "mars2"]{
+			background-image: url(../img/mars2.jpg);
+		}
+		.card.hidden {
+			background-image: url(../img/card-back.jpg);
+		}
+		
+	}
+
+	.game-info {
+		font-size: 18px;
+		padding: 20px 15px;
+	}
+}
+
+@media (min-width: 375px) {
+ .game-area {
+	 .cards-area {
+		 .card {
+			 width: 60px;
+			 height: 60px;
+		 }
+	 }
+ }
+}
+@media (min-width: 576px) {
+
+	header {
+		
+		h1 {
+			
+			letter-spacing: 4px;
+			font-size: 42px;
+		}
+		p {
+			font-size: 28px;
+		
+		}
+	}
+ .game-area {
+	 .cards-area {
+		 .card {
+			 width: 100px;
+			 height: 100px;
+		 }
+	 }
+	 .controls-area {
+		 .buttons {
+			 button {
+				 padding: 15px 30px;
+			 }
+		 }
+		 .scores {
+			 font-size: 20px;
+		 }
+	 }
+ }
+}
+@media (min-width: 768px) {
+
+	header {
+		
+		h1 {
+			
+			letter-spacing: 4px;
+			font-size: 48px;
+		}
+		p {
+			font-size: 32px;
+		
+		}
+	}
+ .game-area {
+	 .cards-area {
+		gap: 20px 20px;
+		 .card {
+			 width: 120px;
+			 height: 120px;
+		 }
+	 }
+	 .controls-area {
+		 .buttons {
+			 button {
+				 padding: 20px 40px;
+			 }
+		 }
+		 .scores {
+			 font-size: 26px;
+		 }
+	 }
+	 .game-info {
+		font-size: 22px;
+		
+	}
+ }
+}
