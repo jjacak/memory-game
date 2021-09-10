@@ -27,6 +27,10 @@ body {
   margin: 0 auto;
 }
 
+.hidden-element {
+  visibility: hidden;
+}
+
 header {
   margin: 20px 0;
 }
@@ -121,47 +125,104 @@ header p {
   border-radius: 5px;
   background-size: cover;
   background-position: center;
+  cursor: pointer;
 }
 
-.game-area .cards-area .card[data-image="brown-dwarf"] {
+.game-area .cards-area .card[data-image='brown-dwarf'] {
   background-image: url(../img/brown-dwarf.jpg);
 }
 
-.game-area .cards-area .card[data-image="earth"] {
+.game-area .cards-area .card[data-image='earth'] {
   background-image: url(../img/earth.jpg);
 }
 
-.game-area .cards-area .card[data-image="eclipse"] {
+.game-area .cards-area .card[data-image='eclipse'] {
   background-image: url(../img/eclipse.jpg);
 }
 
-.game-area .cards-area .card[data-image="mars"] {
+.game-area .cards-area .card[data-image='mars'] {
   background-image: url(../img/mars.jpg);
 }
 
-.game-area .cards-area .card[data-image="moon"] {
+.game-area .cards-area .card[data-image='moon'] {
   background-image: url(../img/moon.jpg);
 }
 
-.game-area .cards-area .card[data-image="planet"] {
+.game-area .cards-area .card[data-image='planet'] {
   background-image: url(../img/planet.jpg);
 }
 
-.game-area .cards-area .card[data-image="neptune"] {
+.game-area .cards-area .card[data-image='neptune'] {
   background-image: url(../img/neptune.jpg);
 }
 
-.game-area .cards-area .card[data-image="mars2"] {
+.game-area .cards-area .card[data-image='mars2'] {
   background-image: url(../img/mars2.jpg);
 }
 
-.game-area .cards-area .card.hidden {
+.game-area .cards-area .card.back-image {
   background-image: url(../img/card-back.jpg);
 }
 
 .game-area .game-info {
   font-size: 18px;
   padding: 20px 15px;
+}
+
+.blink-animation {
+  -webkit-animation: blink 1.6s 1s infinite both;
+          animation: blink 1.6s 1s infinite both;
+}
+
+.fade-in-animation {
+  -webkit-animation: fade-in 0.7s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+          animation: fade-in 0.7s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 @media (min-width: 375px) {

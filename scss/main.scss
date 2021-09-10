@@ -17,6 +17,9 @@ body {
 	align-items: center;
 	margin: 0 auto;
 }
+.hidden-element {
+	visibility: hidden;
+}
 
 header {
 	margin: 20px 0;
@@ -82,40 +85,40 @@ header {
 			'. . . .';
 
 		.card {
-			width:50px;
-			height:50px;
+			width: 50px;
+			height: 50px;
 			border-radius: 5px;
 			background-size: cover;
 			background-position: center;
+			cursor: pointer;
 		}
-		.card[data-image = "brown-dwarf"]{
+		.card[data-image='brown-dwarf'] {
 			background-image: url(../img/brown-dwarf.jpg);
 		}
-		.card[data-image = "earth"]{
+		.card[data-image='earth'] {
 			background-image: url(../img/earth.jpg);
 		}
-		.card[data-image = "eclipse"]{
+		.card[data-image='eclipse'] {
 			background-image: url(../img/eclipse.jpg);
 		}
-		.card[data-image = "mars"]{
+		.card[data-image='mars'] {
 			background-image: url(../img/mars.jpg);
 		}
-		.card[data-image = "moon"]{
+		.card[data-image='moon'] {
 			background-image: url(../img/moon.jpg);
 		}
-		.card[data-image = "planet"]{
+		.card[data-image='planet'] {
 			background-image: url(../img/planet.jpg);
 		}
-		.card[data-image = "neptune"]{
+		.card[data-image='neptune'] {
 			background-image: url(../img/neptune.jpg);
 		}
-		.card[data-image = "mars2"]{
+		.card[data-image='mars2'] {
 			background-image: url(../img/mars2.jpg);
 		}
-		.card.hidden {
+		.card.back-image {
 			background-image: url(../img/card-back.jpg);
 		}
-		
 	}
 
 	.game-info {
@@ -124,84 +127,104 @@ header {
 	}
 }
 
+.blink-animation {
+	animation: blink 1.6s 1s infinite both;
+}
+.fade-in-animation {
+	animation: fade-in 0.7s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+		visibility: visible;
+	}
+	100% {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
 @media (min-width: 375px) {
- .game-area {
-	 .cards-area {
-		 .card {
-			 width: 60px;
-			 height: 60px;
-		 }
-	 }
- }
+	.game-area {
+		.cards-area {
+			.card {
+				width: 60px;
+				height: 60px;
+			}
+		}
+	}
 }
 @media (min-width: 576px) {
-
 	header {
-		
 		h1 {
-			
 			letter-spacing: 4px;
 			font-size: 42px;
 		}
 		p {
 			font-size: 28px;
-		
 		}
 	}
- .game-area {
-	 .cards-area {
-		 .card {
-			 width: 100px;
-			 height: 100px;
-		 }
-	 }
-	 .controls-area {
-		 .buttons {
-			 button {
-				 padding: 15px 30px;
-			 }
-		 }
-		 .scores {
-			 font-size: 20px;
-		 }
-	 }
- }
+	.game-area {
+		.cards-area {
+			.card {
+				width: 100px;
+				height: 100px;
+			}
+		}
+		.controls-area {
+			.buttons {
+				button {
+					padding: 15px 30px;
+				}
+			}
+			.scores {
+				font-size: 20px;
+			}
+		}
+	}
 }
 @media (min-width: 768px) {
-
 	header {
-		
 		h1 {
-			
 			letter-spacing: 4px;
 			font-size: 48px;
 		}
 		p {
 			font-size: 32px;
-		
 		}
 	}
- .game-area {
-	 .cards-area {
-		gap: 20px 20px;
-		 .card {
-			 width: 120px;
-			 height: 120px;
-		 }
-	 }
-	 .controls-area {
-		 .buttons {
-			 button {
-				 padding: 20px 40px;
-			 }
-		 }
-		 .scores {
-			 font-size: 26px;
-		 }
-	 }
-	 .game-info {
-		font-size: 22px;
-		
+	.game-area {
+		.cards-area {
+			gap: 20px 20px;
+			.card {
+				width: 120px;
+				height: 120px;
+			}
+		}
+		.controls-area {
+			.buttons {
+				button {
+					padding: 20px 40px;
+				}
+			}
+			.scores {
+				font-size: 26px;
+			}
+		}
+		.game-info {
+			font-size: 22px;
+		}
 	}
- }
 }
